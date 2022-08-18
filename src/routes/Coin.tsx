@@ -102,9 +102,6 @@ function Coin() {
       ).json();
       setInfo(infoData);
       setPriceInfo(priceData);
-
-      // setCoins((coin) => json.slice(0, 100));
-      // setLoading((loading) => false);
     })();
   }, []);
 
