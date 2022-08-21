@@ -98,3 +98,9 @@ useRouteMatch() => useMatch()
 const priceMatch = useMatch("/:coinId/price");
 const chartMatch = useMatch("/:coinId/chart");
 ```
+
+### **Challenges**
+
+- Add back button
+- price tab
+- Line chart change to candlestick chart
