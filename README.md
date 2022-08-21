@@ -29,7 +29,7 @@ react-router-dom v6 이상일 경우 usePrams를 사용하는 순간 타입이 s
 
 (2)
 
-```
+```typescript
 <Link to={{
   pathname: `/${coin.id}`,
   state:{name:coin.name}
@@ -38,7 +38,7 @@ react-router-dom v6 이상일 경우 usePrams를 사용하는 순간 타입이 s
 
 > React-router-dom 6 🔻
 
-```
+```typescript
 <Link to={`/${coin.id}`} state={coin.name}>
 ```
 
@@ -52,13 +52,13 @@ https://ui.dev/react-router-nested-routes/
 
 Router.tsx 🔻
 
-```
-<Route path="/:coinId/*" element={<Coin/>} />
+```typescript
+<Route path="/:coinId/*" element={<Coin />} />
 ```
 
 Coin.tsx 🔻
 
-```
+```typescript
 <Routes>
   <Route path="chart" element={<Chart />} />
   <Route path="price" element={<Price />} />
@@ -72,8 +72,8 @@ Coin.tsx 🔻
 Router.tsx에서
 chart와 price 컴포넌트를 import하고
 
-```
-<Route path="/:coinId" element={<Coin />} >
+```typescript
+<Route path="/:coinId" element={<Coin />}>
   <Route path="chart" element={<Chart />} />
   <Route path="price" element={<Price />} />
 </Route>
@@ -88,13 +88,13 @@ Overview와 Container 사이에 `<Outlet />`를 작성.
 
 (4)
 
-```
+```typescript
 useRouteMatch() => useMatch()
 ```
 
 : 현재 위치를 기준으로 지정된 경로에 대한 일치 데이터를 반환.
 
-```
+```typescript
 const priceMatch = useMatch("/:coinId/price");
 const chartMatch = useMatch("/:coinId/chart");
 ```
