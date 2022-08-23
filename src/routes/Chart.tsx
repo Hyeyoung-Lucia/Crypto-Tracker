@@ -4,9 +4,11 @@ import { fetchCoinHistory } from "../api";
 import ApexChart from "react-apexcharts";
 import Price from "./Price";
 import { NONAME } from "dns";
+import { darkTheme, lightTheme } from "../theme";
 
 interface ChartPorps {
   coinId: string;
+  isDark: boolean;
 }
 
 interface IHistorical {
@@ -20,7 +22,7 @@ interface IHistorical {
   market_cap: number;
 }
 
-function Chart({ coinId }: ChartPorps) {
+function Chart({ coinId, isDark }: ChartPorps) {
   const { isLoading, data } = useQuery<IHistorical[]>(
     ["ohlcv", coinId],
     () => fetchCoinHistory(coinId),
@@ -43,7 +45,7 @@ function Chart({ coinId }: ChartPorps) {
           ]}
           options={{
             theme: {
-              mode: "dark",
+              mode: isDark ? "dark" : "light",
             },
             chart: {
               height: 300,
